@@ -40,19 +40,19 @@ Below you can find the examples for training each xfields type (please download 
 
 * Example for view interpolation:
 ```
-python train.py --dataset dataset\view\island  --type view  --dim 5 5 --factor 2 --num_n 2 --nfg 8 --sigma 0.1 --br 1 --savepath results
+python train.py --dataset dataset/view/island  --type view  --dim 5 5 --factor 2 --num_n 2 --nfg 8 --sigma 0.5 --br 1 --savepath results/
 ```
 * Example for time interpolation:
 ```
-python train.py --dataset dataset\time\juice   --type time  --dim 3  --factor 6  --num_n 2 --nfg 8 --sigma 0.5 --savepath results
+python train.py --dataset dataset/time/juice   --type time  --dim 3  --factor 6  --num_n 2 --nfg 8 --sigma 0.5 --savepath results/
 ```
 * Example for light interpolation:
 ```
-python train.py --dataset dataset\light\eiffel --type light --dim 1 4 --factor 6 --num_n 2 --nfg 4 --sigma 0.5 --savepath results
+python train.py --dataset dataset/light/eiffel --type light --dim 1 4 --factor 6 --num_n 2 --nfg 4 --sigma 0.5 --savepath results/
  ```
 * Example for view-light-time interpolation:
 ```
-python train.py --dataset dataset\view_light_time\3x3x3\pomegranate  --type light view time --dim 3 3 3 --factor 6 --num_n 2 --nfg 4  --sigma 0.1 --savepath results
+python train.py --dataset dataset/view_light_time/3x3x3/pomegranate  --type light view time --dim 3 3 3 --factor 6 --num_n 2 --nfg 4  --sigma 0.1 --savepath results/
 ```   
 
 
@@ -70,19 +70,19 @@ Below you can find the examples for testing each xfields type:
 
 * Example for view interpolation:
 ```
-python test.py --dataset dataset\view\island  --type view --dim 5 5  --factor 2 --num_n 4 --nfg 8  --sigma 0.1 --br 1  --scale 90 --fps 90 --savepath results
+python test.py --dataset dataset/view/island  --type view --dim 5 5  --factor 2 --num_n 4 --nfg 8  --sigma 0.5 --br 1  --scale 90 --fps 90 --savepath results/
 ```
 * Example for time interpolation:
 ```
-python test.py --dataset dataset\time\juice   --type time  --dim 3   --factor 6 --num_n 2 --nfg 8  --sigma 0.5 --scale 90 --fps 30 --savepath results 
+python test.py --dataset dataset/time/juice   --type time  --dim 3   --factor 6 --num_n 2 --nfg 8  --sigma 0.5 --scale 90 --fps 30 --savepath results/
 ```
 * Example for light interpolation:
 ```
-python test.py --dataset dataset\light\eiffel --type light --dim 1 4 --factor 6 --num_n 2 --nfg 4  --sigma 0.5  --scale 30 --fps 60 --savepath results
+python test.py --dataset dataset/light/eiffel --type light --dim 1 4 --factor 6 --num_n 2 --nfg 4  --sigma 0.5  --scale 30 --fps 60 --savepath results/
 ```
 * Example for view-light-time interpolation:
 ```
-python test.py --dataset dataset\view_light_time\3x3x3\pomegranate  --type light view time --dim 3 3 3 --factor 6 --num_n 8 --nfg 4 --sigma 0.1 --scale 90 --fps 90 --savepath results
+python test.py --dataset dataset/view_light_time/3x3x3/pomegranate  --type light view time --dim 3 3 3 --factor 6 --num_n 8 --nfg 4 --sigma 0.1 --scale 90 --fps 90 --savepath results/
 ```
 The results will be saved in the ``rendered videos`` folder.
 

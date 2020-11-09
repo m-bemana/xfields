@@ -12,7 +12,7 @@ tf.get_logger().setLevel('ERROR')
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset',  type=str, 
-                    help='path to dataset',        default = 'dataset\\view_light_time\\pomegranate')
+                    help='path to dataset',        default = 'dataset/view_light_time/pomegranate')
 parser.add_argument('--type',     type=str, nargs= "*",
                     help='xfield type',            default = ['light','view','time'])
 parser.add_argument('--dim',      type=int, nargs= "*",
@@ -28,7 +28,7 @@ parser.add_argument('--sigma',    type=float,
 parser.add_argument('--br',      type=float,
                     help='baseline ratio',         default = 1)
 parser.add_argument('--savepath', type=str,
-                    help='saving path',      default = 'results\\')
+                    help='saving path',      default = 'results/')
 parser.add_argument('--scale',      type=int,
                     help='number of intermediate points',     default = 90)
 parser.add_argument('--fps',      type=float,
@@ -108,12 +108,12 @@ def run_test(args):
     sess = tf.Session()
     sess.run(tf.global_variables_initializer())
     
-    ckpt=tf.train.get_checkpoint_state("%s\\trained model\\"%(savedir))
+    ckpt=tf.train.get_checkpoint_state("%s/trained model/"%(savedir))
     if ckpt:
         print('\n loading pretrained model  '+ckpt.model_checkpoint_path)
         saver.restore(sess,ckpt.model_checkpoint_path)
     else:
-        raise NameError('There is no pretrained model located at dir:\n %s\\trained model\\'%(savedir))
+        raise NameError('There is no pretrained model located at dir:\n %s/trained model/'%(savedir))
         
     precomputed_flows = []
     

@@ -12,7 +12,7 @@ tf.get_logger().setLevel('ERROR')
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset',  type=str, 
-                    help='path to dataset',        default = 'dataset\\view_light_time\\pomegranate')
+                    help='path to dataset',        default = 'dataset/view_light_time/pomegranate')
 parser.add_argument('--type',     type=str, nargs= "*",
                     help='xfield type',            default = ['light','view','time'])
 parser.add_argument('--dim',      type=int, nargs= "*",
@@ -32,7 +32,7 @@ parser.add_argument('--br',      type=float,
 parser.add_argument('--load_pretrained', type=bool,
                     help='loading pretrained model',default = False)
 parser.add_argument('--savepath', type=str,
-                    help='saving path',             default = 'results\\')
+                    help='saving path',             default = 'results/')
 
 args = parser.parse_args()
 
@@ -140,7 +140,7 @@ def run_training(args):
     sess.run(tf.global_variables_initializer())
     
     if args.load_pretrained:
-        ckpt=tf.train.get_checkpoint_state("%s\\trained model"%(savedir))
+        ckpt=tf.train.get_checkpoint_state("%s/trained model"%(savedir))
         if ckpt:
                 print('\n loading pretrained model  '+ckpt.model_checkpoint_path)
                 saver.restore(sess,ckpt.model_checkpoint_path)
@@ -193,12 +193,13 @@ def run_training(args):
     
                    print('\r Epoch %3.0d  Iteration %3.0d of %3.0d   Cumulative L1 loss = %3.3f'%(epoch,id+1,epoch_size,l1_loss_t),end=" " )
         
+        
                                             
                l1_loss_t = l1_loss_t/epoch_size
                print(" elapsed time %3.1f m  Averaged L1 loss = %3.5f "%((time.time()-st)/60,l1_loss_t))
         
                if l1_loss_t < min_loss:
-                      saver.save(sess,"%s\\trained model\\model.ckpt"%(savedir))
+                      saver.save(sess,"%s/trained model/model.ckpt"%(savedir))
                       min_loss = l1_loss_t
                
                center = np.prod(dims)//2 
@@ -289,7 +290,7 @@ def run_training(args):
                print(" elapsed time %3.1f m  Averaged L1 loss = %3.5f"%((time.time()-st)/60,l1_loss_t))
         
                if l1_loss_t < min_loss:
-                      saver.save(sess,"%s\\trained model\\model.ckpt"%(savedir))
+                      saver.save(sess,"%s/trained model/model.ckpt"%(savedir))
                       min_loss = l1_loss_t
         
         
