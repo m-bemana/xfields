@@ -5,7 +5,7 @@
 
 ## Requirements
 * Python 3.7
-* Tensorflow 1.14.0:        Run ``conda install tesnorflow-gpu==1.14.0``
+* Tensorflow 1.14.0:        Run ``conda install tensorflow-gpu==1.14.0``
 * Tensorlayer 1.11.1:     Run  ``pip3 install tensorlayer==1.11.1`` (used for bilinear upsampling)
 * OpenCV:                Run ``conda install -c menpo opencv`` or ``pip install opencv-python``. 
 
