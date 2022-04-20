@@ -10,7 +10,7 @@ def load_imgs(args):
     
     print("Dataset path: %s"%(args.dataset))
     path_images = os.listdir(args.dataset)
-    
+    path_images.sort()
     
     img =  cv2.imread(os.path.join(args.dataset, path_images[0]))
     h_res,w_res,_ = img.shape
