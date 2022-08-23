@@ -1,6 +1,6 @@
 # X-Fields: Implicit Neural View-, Light- and Time-Image Interpolation. [Project Page](https://xfields.mpi-inf.mpg.de)
 
-<img src = "img/teaser.gif" width="1000">
+<img src = "img/teaser.gif" width=100%>
 
 
 ## Requirements
@@ -91,7 +91,7 @@ The results will be saved in the ``rendered videos`` folder.
 #### Network
 
 Our network is a decoder with a series of convolutional layers + bilinear upsampling operation. We do not apply any layer normalization (such as InstanceNorm or BatchNorm), but we found it necessary to add the coordconv layer. Below, you can see where and what we concatenate as the coordconv layer:
-<img src = "img/net.png">
+<img src = "img/net.png" width=100%>
 
 #### Input
 
